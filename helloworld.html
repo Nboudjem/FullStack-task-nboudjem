@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+        body {background-color: powderblue;}
+        h1   {color: blue;}
+        p    {color: red;}
+        </style>
+        </head>
+<body style="background-color:powderblue;">
+<h1>My First Heading</h1>
+<p><b>Hello</b> and <b>bold</b> world!.</p>
+<a href="https://www.w3schools.com">Visit W3Schools</a>
+
+<img src="nb.jpg" height="400" width="400">
+
+<p style="color:blue;">This is a red paragraph.</p>
+
+
+<ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+
+  <ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+
+<table>
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+  </table>
+
+
+  <p id="myelement1">hillo</p>
+
+  <p class="myclass">text</p>
+  <p class="myclass">text</p>
+
+  <div id="myhandler"></div>
+
+<script>
+      // some variable that refers to document and finds nthe relevant 
+      // object with id or class
+    document.getElementById("myelement1").innerHTML = "kukkuluuru!";
+    document.getElementById("myelement1").style.color = "green";
+
+    const elementlist = document.getElementsByClassName("myclass");
+      for (let i = 0; i < elementlist.length; i++) {
+          elementlist[i].style.color = "black";
+      }
+// my variable are manipulated as we wish 
+    const myvariable = document.getElementById("myhandler");
+// create a paragraph with text and
+    const para = document.createElement("p");
+    const node = document.createTextNode("bla bla bla");
+    para.appendChild(node);
+//add paragraph to DIV elementlist
+    myvariable.appendChild(para);
+
+</script>
+
+
+</body>
+</html>

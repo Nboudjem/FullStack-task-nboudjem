@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+  </head>
+
+  <body>
+
+    <section class="preview">
+    </section>
+
+    <button class="off">Machine is off</button>
+ 
+
+  </body>
+  <script>
+
+    let btn = document.querySelector('.off');
+
+    // Add your code here
+
+    btn.addEventListener('click', koe);  
+
+    function koe(e) {
+        if (e.target.textContent === 'Machine is off'){
+        e.target.textContent = 'Machine is on';
+        } else {
+        e.target.textContent = 'Machine is off';
+       }   
+    }
+
+
+  </script>
+
+</html>

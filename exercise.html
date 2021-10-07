@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+  </head>
+
+  <p id="para"></p>
+
+  <body>
+
+    <section class="preview">
+    </section>
+
+    <button class="b1">button 1</button>
+
+    <button class="b2">button 2</button>
+ 
+
+  </body>
+  <script>
+
+    const btn1 = document.querySelector('.b1');
+    const btn2 = document.querySelector('.b2');  
+
+    let buttonstatus1 = true;
+    let buttonstatus2 = true;
+
+
+    btn1.addEventListener('click', koe1);
+    btn2.addEventListener('click', koe2);   
+
+    function koe1(e) {
+        if (e.target.textContent = 'button 1'){
+        para.textContent = "this is button 1";
+        e.target.textContent = e.target.textContent.toUpperCase();
+                } else {
+           return false;
+       }
+       buttonstatus2 = !buttonstatus2;  
+       // boolean is needed here! when clicking the button it has to comeback to its first position, means to lowecase.
+    }
+
+    function koe2(e) {
+        if (e.target.textContent = 'button 2'){
+            para.textContent = "this is button 2";
+            e.target.textContent = e.target.textContent.toUpperCase();
+            } else {
+            return false;
+       } 
+       buttonstatus2 = !buttonstatus2;  
+    }
+
+  </script>
+
+</html>

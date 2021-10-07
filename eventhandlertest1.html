@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Random color example — event handler attribute</title>
+    <style>
+      button {
+        margin: 10px
+      };
+    </style>
+  </head>
+  <body>
+    <button>Change color</button>
+    <script>
+        
+      const btn = document.querySelector('button');
+
+      function random(number) {
+        return Math.floor(Math.random()*number);
+      }
+
+      function bgChange() {
+        const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+        document.body.style.backgroundColor = rndCol;
+      }
+
+      function myalert(){
+          alert("Hello!");
+      }
+
+      function mylog(){
+        console.log('mousse leave');
+      }
+
+      btn.addEventListener('click', bgChange);
+      btn.addEventListener('click', myalert);
+      btn.addEventListener('mouseleave', mylog);
+      btn.addEventListener('mouseleave', function(){
+          console.log('mouseleave2');
+      });
+
+      btn.addEventListener('mouseleave', function(){
+          console.log('mouseleave3');
+      });
+
+      btn.removeEventListener('click', bgChange);
+
+
+
+
+      function bgChange2(e) {
+        const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+       
+        e.target.style.backgroundColor = rndCol;
+
+      }
+      
+      btn.removeEventListener('click', bgChange2);
+
+
+    </script>
+  </body>
+</html>

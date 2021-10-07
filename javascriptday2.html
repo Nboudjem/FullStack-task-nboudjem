@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<script>
+
+</script>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+    <p id="demo"></p>
+
+    <script>
+
+        //date functin 
+        const d = new Date();
+        console.log(d);
+        console.log((d.getHours)+ "" + d.getMinutes() + "" +d.getSeconds());
+
+        //document.getElementById("demo").innerHTML = d.toDateString();
+        //document.getElementById("demo").innerHTML = d.toUTCString();
+        document.getElementById("demo").innerHTML = d.toISOString();
+
+
+        //create date-time 
+        const newdate = new Date();
+        //set different valu e
+        newdate.setMonth(11);// 0 to 11, 11 is december 
+        newdate.setDate(25);// date starts from 1 not like months that srtats from 0
+        console.log(newdate);
+
+
+        //math
+        let mymath = Math.PI;
+        console.log(Math.PI); //return 3.14... C#, C++ is best for math!
+        console.log(Math.trunc(mymath));//returns 3
+        console.log(Math.round(mymath));//return 3
+
+        //Math random()
+        let diceroll = Math.floor(6 * Math.random()) + 1; //
+        console.log(diceroll); //return
+
+        //better random number  generator (min nd max)
+        let min = 1, max = 6;
+        let diceroll2 = Math.floor(Math.random() * (max - min + 1) ) + min;
+        console.log(diceroll2); //return
+
+        //boolean 
+        let decision = true; //
+
+        if (decision === true){
+
+            console.log("decision is true");
+        }
+
+        decision = true; //return 
+
+        //ternary operations number
+        //reurn result based on comparision truthfullness
+
+        //let x = 111, y =222;
+        let x = 222, y =111;
+
+        //let ternaryresult = (x>y) ? "kyla" : "ei ";
+        let ternaryresult = (decision) ? "kyla" : "ei ";
+        console.log(ternaryresult);
+
+        // if, if else  and else 
+
+        let aaa = 3, bbb=55, ccc=66;
+
+        if (aaa>3){
+            console.log("path1");
+        } else if (aaa<bbb && ccc ===8){
+            console.log("path2");
+        } else {
+            console.log("path3");
+        }
+
+        //switch 
+
+        let xxx=5;
+        
+        switch(xxx) {
+            case 1:
+                console.log("1");
+    // code block
+                break;
+            case 2:
+                console.log("2");
+    // code block
+                break;
+            case 3:
+                console.log("3");
+                break;
+            case 4:
+                console.log("4");
+                break;        
+            default:
+                console.log("something else to be done!");
+    // code block
+}
+        
+//looping can use for, while ... ... ... 
+let myarray = [11, 22, 33, 44,55]
+
+//most for is used
+
+//use it with break to see if hit has found 
+
+
+
+for (let i = 0; i < myarray.length; i++) {
+  if (myarray[i]>21){
+      console.log("myarray" +i);
+      break;
+
+  }
+    
+} 
+
+//here we iterate every third element of myarray and
+
+for (let i = 0; i < myarray.length; i+=3) {
+      console.log("myarray" +i);
+}
+    
+
+// for in is used when you go through every element of myarray and
+for (i in myarray) {
+    if (myarray[i]>22){
+        console.log("for in gives out" +myarray[i]);
+    }
+    break;
+}
+
+//forof allows us to deal with element (values) of array
+for (let element of myarray) {
+    console.log("for of gives out" +element);
+}
+
+
+
+//alternative to use foreach 
+//it uses to execute for each element
+myarray.forEach(myfunction);
+function myfunction(value, index, array) {
+    console.log("for each gives out" +value);
+}
+
+// this is essentially viryual
+
+myarray.forEach((value,index,array) => 
+    {console.log("for gives out" + value);}
+);
+
+
+
+//while is an alternative to different for loops
+
+let it = 0;
+
+while(it<5){
+    console.log(it);
+    it++;
+}
+
+// do while is used when you must loop at least once
+
+iter=0;
+do{
+    console.log(iter);
+    iter++;
+}while(iter<5);
+
+
+
+// iessentially any list, array or even string can be iterated over
+//nything that is an object list can be iterated over
+let message = "bonjour tous le monde";
+for (let iterr of message){
+    console.log(iterr);
+}
+
+//set is a grouping f unique value
+
+let personlist = new Set(["aarne","berta","celsius","daavid"]);
+// add new unique elements
+personlist.add("eemeli");// this is added
+personlist.add("aarne");// this is not added as 
+
+
+personlist.add("Nacer");// this is added
+personlist.delete("Nacer");// this is not added as 
+
+console.log(personlist.keys());//
+console.log(personlist.values());//
+
+for(const element of personlist){
+    console.log(element);
+}
+
+// MAP 
+
+let personlist2 = new Map([
+[111,"aarne"],
+[222,"berta"],
+[333,"celsius"],
+[444,"daavid"]
+]);
+// add new unique elements
+personlist2.set(555,"eemeli");// this is added
+personlist2.set(111,"aarne2");// this is changed 
+
+
+console.log(personlist2.keys());//
+console.log(personlist2.values());//
+
+for(const element of personlist2){
+    console.log(element + "and key is" +element[0]);
+}
+
+
+//typeof 
+
+//let koe = 123;
+//let koe = "helleo";
+//let koe = "helleo";
+let koe = {firstname: "Nacer", familyname: "Boudjemia"};
+//let koe = {};
+
+console.log(typeof koe);
+
+if (typeof Koe === Object){
+    console.log(firstname);
+}
+
+
+//basic anunymus function
+
+let myfunctionvariable = function(){
+    return "this is anonymus function";
+}
+
+console.log(myfunctionvariable());
+
+//with => which is called lambda function 
+
+let myfunctionvariable2 = () => {
+    return "this is lambda";
+}
+console.log(myfunctionvariable2());
+
+//if lambda function has only one line that reur
+//we can simplyfiy it considerably 
+
+let myfunctionvariable3 = () => "this is lambda funtion";
+console.log(myfunctionvariable3());
+
+//mycube function is here 
+let mycube = (x) => x**3;
+console.log(mycube(3));
+
+
+
+
+</script>
+
+</body>
+
+</html>
+
+

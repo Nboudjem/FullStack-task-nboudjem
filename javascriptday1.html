@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<script>
+//javascript added here is usully something we cll via function calls
+
+</script>
+
+<!--Thi is external javascript file-->
+<script src="jstest1.js"></script>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+    <p id="mypara1">text</p>
+    <button 
+    onclick="document.getElementById('mypara1').innerHTML = Date()"
+    onmouseleave="window.alert('you left me')">press me!</button>
+
+
+    <!--this is exteral javascript file-->
+    <script src="jstest2.js"></script>
+
+    <script>
+        //javascript code is usually written here
+
+        //
+
+        //
+        const mypara1 = document.getElementById("mypara1");
+
+        mypara1.innerHTML = "changed text";
+
+        //this window alert message
+        //window.alert("this is a window mwssage");
+
+        //console message
+
+        console.log("Alert meaage");
+
+        //basic variables
+        //let means normal variables
+        //const means cnstant
+        let myvar1 = 1234;
+        let myvar2 =     2222;
+        //capital letters do matter!
+
+        let MYVAR2 = 3333;
+
+        MYVAR2 = myvar1 + myvar2; 
+        console.log(MYVAR2);
+
+        let myvar11 = 11;
+        let myvar12 = "12";
+
+        let result11 = 11 + myvar11; //22
+        console.log(result11);
+
+        let result12 = 11 + myvar12;
+        console.log(result12);
+
+        //variable without value is undefined 
+        let myvar13; //undefined
+        console.log(myvar13);
+
+        myvar13 = 1111; //defined
+        console.log(myvar13);
+
+        //let myvar13 = "blablabla";//this cause crash 
+
+        qw = "qwerty";
+        console.log(qw)
+
+
+        //const test; // const must alrady be declared 
+        myvar13 = 4;
+        console.log(myvar13 ** 3); //this means 4*4*4
+
+        console.log(++myvar13);// this is increment 
+        console.log(myvar13++);// this is increment
+
+        for (let i = 0; i < 5; i++) {
+            console.log(i);
+        }
+
+        //function call 
+
+        console.log(mycube(5));
+        console.log(myarea(5,10));
+
+        mysayhello("Nacer", "Boudjemia", "man");
+
+        //objects 
+        //ojects propertie are property: value pair
+        const mycar1 = {type:"Fiat", model:"111", color:"blue"};
+
+        mycar1.seats = 5;
+
+        console.log(mycar1.type);
+        console.log(mycar1.seats);
+
+        //you can add methods to objects with
+
+        mycar1.information = function() {console.log(this.type+""+this.model);};
+
+        mycar1.information();
+
+        //strings
+        // the sign / means that the follwing letter is the special one
+
+        let myString1 = "I am a \"Fox\" O\'Brown ";
+        console.log(myString1);
+        console.log(myString1.length);
+
+        let myString2 = "directory is \\dir\\photos\\cats\\";
+
+        let myString3 = "QWE; Oulu; HELSINKI; Finland; Europe";
+
+        myHelsinkiposition = myString3.indexOf("HELSINKI");
+        myHelsinkilength = "HELSINKI".length;
+
+        let result = myString3.slice(myHelsinkiposition, myHelsinkiposition + myHelsinkilength);
+
+        let result2 = result[0] + result.slice(1) + result.toLowerCase();
+        console.log(result2);
+
+
+        let firstname = "Nacer";
+        let lastname = "Boudjemia";
+        let myString4 = `This was written by ${firstname} ${lastname}.`;
+        let myString5 = `${firstname} ${lastname} sw devloper`;
+        console.log(myString4);
+        console.log(myString5);
+
+        //numbers to string nd vice versa
+
+        let mynumber = 1234;
+        let resultstring = mynumber.toString();
+        console.log(resultstring);
+
+
+        let mystring = "1234";
+        let resultNumer = Number(mystring);
+        console.log(resultNumer);
+
+
+        //arrays 
+        
+        let myarray1 = ["a", "b", "c", "d"];
+        console.log(myarray1[0]); // "a"
+        myarray1[0]= "aarne";
+        console.log(myarray1[0]);
+
+
+        myarray1.push("e");
+        console.log(myarray1);
+        myarray1.unshift("eka");
+        console.log(myarray1);
+
+        // array iteration
+
+        for (i=0; i < myarray1.length; i++) {
+            console.log(myarray1[i]);
+        }
+
+        myarray1.forEach(myhandlerfunction);
+        function myhandlerfunction(value, index, array) {
+            console.log(value);
+        }
+
+        console.log("-----------------");
+
+        //  create a new arrary based on manipulation of old arrays
+        //it creates a new array as a long as origial array
+        // mapping function must return some values as a result
+
+        let myarray2 = myarray1.map(mymappingfunction);
+        function mymappingfunction(value, index, array) {
+            return index.toString + "=" + value;
+        }
+        console.log(myarray2);
+
+
+        //create a new array based condition of the old array and
+        // this condition decides how long aray will be returned
+
+        let myarray3 = myarray1.filter(myfilteringfunction);
+        function myfilteringfunction(value, index, array) {
+
+            //this is a filter returns all the elements with index bigger than 2
+            if (index > 2) {
+            return index.toString + "=" + value;
+            }
+        }
+
+        console.log(myarray3);
+
+
+
+
+
+
+ 
+       
+
+
+
+        
+
+
+
+
+
+
+        
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <p>Lottery</p>
+<meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        function setnumbers() {
+            let set = new Set();
+            do {
+                set.add(Math.floor(40 * Math.random()) + 1);
+                } while (set.size < 7);
+            return set;
+        }
+
+
+        let correctset = setnumbers();
+        console.log("correctset is here" + [...correctset].sort());
+
+        let myset = setnumbers();
+        console.log("my lottery line is" + [...myset].sort());
+
+        let intersection = new Set();
+        intersection = [...correctset].filter(x => myset.has(x));
+        console.log("common value is" + [...intersection].sort());
+    </script>
+
+</body>
+</html> 

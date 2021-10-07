@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>~nboudjem solution</h2>
+    <p id="demo">Lotto numbers</p>
+    <script>
+        //create a function to generáte both arrays
+        function lotto() {
+
+            let arr = [];
+            while (arr.length < 6) {
+                let r = Math.floor(Math.random() * 45) + 1;
+                if (arr.indexOf(r) === -1) arr.push(r);
+                let add = true;
+
+                // looks for duplicate numbers
+                // if duplicate exists it does not add it to the array
+                for (let y = 0; y < 45; y++) {
+                    if (arr[y] == arr) {
+                        add = false;
+                    }
+                }
+            } return arr;
+
+        }
+        //sorts array by ascending order and adds it into new array
+        const arrayx = [...lotto()].sort((a, b) => a - b);
+        const arrayy = [...lotto()].sort((c, d) => c - d);
+        console.log(arrayx);
+        console.log(arrayy);
+        //intersection between the two arrays
+        const intersection = arrayx.filter(x => arrayy.includes(x));
+        console.log(intersection);
+
+    </script>
+</body>
+
+</html>

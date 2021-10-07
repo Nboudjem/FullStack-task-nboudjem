@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    let name = 'Mustafa';
+    let i = 0;
+    let para = document.createElement('p');
+
+    let phonebook = [
+      { name : 'Chris', number : '1549' },
+      { name : 'Li Kang', number : '9634' },
+      { name : 'Anne', number : '9065' },
+      { name : 'Francesca', number : '3001' },
+      { name : 'Mustafa', number : '6888' },
+      { name : 'Tina', number : '4312' },
+      { name : 'Bert', number : '7780' },
+      { name : 'Jada', number : '2282' },
+    ]
+
+    // Add your code here
+
+    for (let element of phonebook) {
+        console.log(element);
+        if(element.name==='Anne'){
+            para.textContent = element.name + " " + element.number;
+            break;
+        }
+    }
+
+    // Don't edit the code below here!
+    let section = document.querySelector('section');
+    section.appendChild(para);
+  </script>
+
+</html>
